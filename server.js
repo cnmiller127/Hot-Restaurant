@@ -10,10 +10,10 @@ app.use(express.json());
 
 var reservations = [
   {
-    customerName: "",
-    customerEmail: "",
-    phoneNumber: "",
-    customerId: ""
+    customerName: "test",
+    customerEmail: "test",
+    phoneNumber: "test",
+    customerId: "test"
   }
 ];
 
@@ -43,6 +43,7 @@ app.get("/add", function (req, res) {
 app.get("/api/view", function (req, res) {
   return res.sendFile(path.join(__dirname, "view.html"));
 });
+
 //console.log(reservations);
 
 //adding new res
