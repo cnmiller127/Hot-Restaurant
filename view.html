@@ -3,12 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Current Availability</title>
+    <title>Current Reservations</title>
 </head>
 <body>
-    
-    
-    <script src="jquery-3.5.1.min.js"></script>
-    <script></script>
+<p><a href= "/">Go Back</a></p>
+
+ <script type= "text/javascript">
+// Displays all reservations
+$.get("/api/view", function (req, res) {
+  return res.sendFile(path.join(__dirname, "view.html"));
+});
+
+
+var currentReservations = 
+reservations.forEach(element =>
+`<h4> ${indexOf(reservations) + 1} </h4>
+<h6> Name: ${customerName} </h6>
+<p> Email: ${customerEmail}</p>
+<p> Number: ${phoneNumber}</p>
+<p> Reservation Id: ${customerId}</p>`
+);
+
+var currentWaitlist = 
+waitlist.forEach(element =>
+`<h4> ${indexOf(waitlist) + 1} </h4>
+<h6> Name: ${customerName} </h6>
+<p> Email: ${customerEmail}</p>
+<p> Number: ${phoneNumber}</p>
+<p> Reservation Id:${customerId}</p>`
+);
+
+// const backHome = $.get("/", function (req, res) {
+//   res.sendFile(path.join(__dirname, "home.html"));
+// });
+ </script>
 </body>
 </html>
